@@ -38,7 +38,7 @@ export default function Home() {
             BaseGit is the best way to store information.
         </p>
 
-        <h2>Continue with a provider</h2>
+        <h2 className="provider">Continue with a provider</h2>
 
         <Grid>
           <Button onClick={clickHandler}>
@@ -224,9 +224,8 @@ export default function Home() {
     </div>
 
     <div className="image">
-      <img src="/rocket.png" />
+      <img src="/static/rocket.png" />
     </div>
-
 
   </div>)
 }

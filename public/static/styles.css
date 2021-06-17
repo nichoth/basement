@@ -36,8 +36,18 @@ button:hover {
 
 div.image {
     width: 50%;
+    overflow: hidden;
+    /* background-position: center; */
+    /* background: url(rocket.png); */
 }
 
 .image img {
-    width: 100%;
+    object-fit: cover;
+    position: relative;
+    width: 150%;
+    left: -4rem;
+}
+
+h2.provider {
+    font-size: 1rem;
 }
