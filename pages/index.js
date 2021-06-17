@@ -87,7 +87,8 @@ export default function Home() {
         .container {
           background-color: white;
           min-height: 100vh;
-          padding: 0 0.5rem;
+          padding: 0 3rem;
+          padding-bottom: 6rem;
           display: flex;
           flex-direction: column;
           width: 50%;
