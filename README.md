@@ -2,6 +2,7 @@
 
 https://www.notion.so/Front-End-Dev-Challenge-feb43cb413e644e683ce7bf84cff7c16
 
+This is the first time I've used next.js
 
 ## next ???
 
@@ -14,6 +15,8 @@ https://www.notion.so/Front-End-Dev-Challenge-feb43cb413e644e683ce7bf84cff7c16
 
 * how to use sass for css?
 
+* what is the target of compilation? I would think there should be a folder like `public` that holds the compiled site -- static pages and single-page javascript
+
 ---------------------------------------------------
 
 ## choices
@@ -25,3 +28,7 @@ https://www.notion.so/Front-End-Dev-Challenge-feb43cb413e644e683ce7bf84cff7c16
 * The image of the rocket inverts the color while the login is 'resolving'
 
 * We're using the browser's default validation UI to show problems with validating the login form. The is no display built for a server-side error with login because there is no server
+
+## TODO
+* lighthouse
+  - performance -- how to measure the 'real' site vs a development site?
