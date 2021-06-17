@@ -1,10 +1,16 @@
 import Head from 'next/head'
+import { useState } from 'react';
 import { Button } from '../components/Button'
 import { Grid } from '../components/Grid'
 import { TextHr } from '../components/TextHr'
 import { Field } from '../components/Field'
 
 export default function Home() {
+
+  const [loginState, setLoginState] = useState({
+    isResolving: false,
+    loggedInWith: null
+  });
 
   function submit (ev) {
     ev.preventDefault()
@@ -17,7 +23,22 @@ export default function Home() {
     return function (ev) {
       ev.preventDefault()
       console.log('login with ' + type)
+
+      setLoginState({...loginState, isResolving: true })
+
+      // wait 2 seconds
+      setTimeout(() => {
+        console.log('done loggin in')
+        setLoginState({
+          resolving: false,
+          loggedInWith: type
+        })
+      }, 2000)
     }
+  }
+
+  function active (state, type) {
+    return state === type
   }
 
   return (<div>
@@ -43,15 +64,24 @@ export default function Home() {
         <h2 className="provider">Continue with a provider</h2>
 
         <Grid>
-          <Button onClick={loginProvider('fb')}>
+          <Button active={active(loginState.loggedInWith, 'fb')}
+            onClick={loginProvider('fb')}
+            disabled={loginState.isResolving}
+          >
             <img src="/fb.svg"></img>
           </Button>
 
-          <Button onClick={loginProvider('twitter')}>
+          <Button active={active(loginState.loggedInWith, 'twitter')}
+            onClick={loginProvider('twitter')}
+            disabled={loginState.isResolving}
+          >
             <img src="/twit.svg"></img>
           </Button>
 
-          <Button onClick={loginProvider('gh')}>
+          <Button active={active(loginState.loggedInWith, 'gh')}
+            onClick={loginProvider('gh')}
+            disabled={loginState.isResolving}
+          >
             <img src="/gh.svg"></img>
           </Button>
         </Grid>
@@ -68,7 +98,9 @@ export default function Home() {
             label="Password" />
 
           <div className="form-submit-btn">
-            <button type="submit">Sign up</button>
+            <button type="submit" disabled={loginState.isResolving}>
+              Sign up
+            </button>
           </div>
         </form>
 

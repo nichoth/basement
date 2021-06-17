@@ -28,6 +28,11 @@ button:hover {
     cursor: pointer;
 }
 
+button:disabled {
+    opacity: 0.4;
+    cursor: progress!important;
+}
+
 .sign-in-form {
     min-width: 20rem;
 }
