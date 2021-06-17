@@ -5,6 +5,8 @@ import { Grid } from '../components/Grid'
 import { TextHr } from '../components/TextHr'
 import { Field } from '../components/Field'
 
+
+
 export default function Home() {
 
   const [loginState, setLoginState] = useState({
@@ -46,10 +48,6 @@ export default function Home() {
     }
   }
 
-  function active (state, type) {
-    return state === type
-  }
-
   return (<div>
     <div className="container">
       <Head>
@@ -60,7 +58,7 @@ export default function Home() {
 
       <main>
         <div>
-          <img src="/mark.svg" />
+          <img alt="logo" src="/mark.svg" />
         </div>
         <h1 className="title">
             Sign up to BaseGit
@@ -80,25 +78,22 @@ export default function Home() {
         <h2 className="provider">Continue with a provider</h2>
 
         <Grid>
-          <Button active={active(loginState.loggedInWith, 'fb')}
-            onClick={loginProvider('fb')}
+          <Button name="login with facebook" onClick={loginProvider('fb')}
             disabled={loginState.isResolving}
           >
-            <img src="/fb.svg"></img>
+            <img alt="facebook" src="/fb.svg" />
           </Button>
 
-          <Button active={active(loginState.loggedInWith, 'twitter')}
-            onClick={loginProvider('twitter')}
+          <Button name="login with twitter" onClick={loginProvider('twitter')}
             disabled={loginState.isResolving}
           >
-            <img src="/twit.svg"></img>
+            <img alt="twitter" src="/twit.svg" />
           </Button>
 
-          <Button active={active(loginState.loggedInWith, 'gh')}
-            onClick={loginProvider('gh')}
+          <Button name="login with github" onClick={loginProvider('gh')}
             disabled={loginState.isResolving}
           >
-            <img src="/gh.svg"></img>
+            <img alt="github" src="/gh.svg" />
           </Button>
         </Grid>
 
@@ -279,8 +274,8 @@ export default function Home() {
       `}</style>
     </div>
 
-    <div className="image">
-      <img src="/static/rocket.png" />
+    <div className={loginState.isResolving ? 'image resolving' : 'image'}>
+      <img src="/static/rocket.png" alt="rocket" />
     </div>
 
   </div>)

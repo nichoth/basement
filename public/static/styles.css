@@ -66,6 +66,10 @@ div.image {
     /* background: url(rocket.png); */
 }
 
+div.image.resolving {
+    filter: invert();
+}
+
 .image img {
     object-fit: cover;
     position: relative;

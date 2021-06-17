@@ -1,8 +1,9 @@
 // import { loadGetInitialProps } from 'next/dist/next-server/lib/utils'
 import styles from './Button.module.css'
 
-export function Button ({ children, onClick, className, disabled }) {
+export function Button ({ children, onClick, className, disabled, name }) {
   return (<button
+      name={name}
       type="button"
       disabled={disabled}
       onClick={onClick}
