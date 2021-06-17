@@ -12,6 +12,10 @@
   border-radius: 5px;
 }
 
+.btn:hover {
+  background-color: lightgray;
+}
+
 .btn img {
   vertical-align: middle;
 }

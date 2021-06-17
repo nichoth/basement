@@ -8,6 +8,14 @@ export default function Home() {
 
   function submit (ev) {
     ev.preventDefault()
+    console.log('login with email and pw')
+    console.log('email', ev.target.elements.email.value)
+    console.log('password', ev.target.elements.password.value)
+  }
+
+  function clickHandler (ev) {
+    ev.preventDefault()
+    console.log('login with a button')
   }
 
   return (<div>
@@ -33,15 +41,15 @@ export default function Home() {
         <h2>Continue with a provider</h2>
 
         <Grid>
-          <Button>
+          <Button onClick={clickHandler}>
             <img src="/fb.svg"></img>
           </Button>
 
-          <Button>
+          <Button onClick={clickHandler}>
             <img src="/twit.svg"></img>
           </Button>
 
-          <Button>
+          <Button onClick={clickHandler}>
             <img src="/gh.svg"></img>
           </Button>
         </Grid>
@@ -51,8 +59,11 @@ export default function Home() {
         </TextHr>
 
         <form className="sign-in-form" onSubmit={submit}>
-          <Field name="email" placeholder="name@domain.com"
+          <Field type="email" name="email" placeholder="name@domain.com"
             label="Email address" />
+
+          <Field name="password" placeholder="password" type="password"
+            label="Password" />
 
           <div className="form-submit-btn">
             <button type="submit">Sign up</button>
