@@ -13,9 +13,11 @@ export default function Home() {
     console.log('password', ev.target.elements.password.value)
   }
 
-  function clickHandler (ev) {
-    ev.preventDefault()
-    console.log('login with a button')
+  function loginProvider (type) {
+    return function (ev) {
+      ev.preventDefault()
+      console.log('login with ' + type)
+    }
   }
 
   return (<div>
@@ -41,15 +43,15 @@ export default function Home() {
         <h2 className="provider">Continue with a provider</h2>
 
         <Grid>
-          <Button onClick={clickHandler}>
+          <Button onClick={loginProvider('fb')}>
             <img src="/fb.svg"></img>
           </Button>
 
-          <Button onClick={clickHandler}>
+          <Button onClick={loginProvider('twitter')}>
             <img src="/twit.svg"></img>
           </Button>
 
-          <Button onClick={clickHandler}>
+          <Button onClick={loginProvider('gh')}>
             <img src="/gh.svg"></img>
           </Button>
         </Grid>
@@ -60,7 +62,7 @@ export default function Home() {
 
         <form className="sign-in-form" onSubmit={submit}>
           <Field type="email" name="email" placeholder="name@domain.com"
-            label="Email address" />
+            maxlength="64" label="Email address" />
 
           <Field name="password" placeholder="password" type="password"
             label="Password" />
