@@ -1,0 +1,17 @@
+.error {
+  color: white;
+  background-color: red;
+}
+
+.btn {
+  background-color: transparent;
+  border: 1px solid gray;
+  padding: 0.4rem;
+  display: block;
+  min-width: 5rem;
+  border-radius: 5px;
+}
+
+.btn img {
+  vertical-align: middle;
+}

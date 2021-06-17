@@ -1,0 +1,22 @@
+.hr {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.hr hr {
+  position: relative;
+  border: 1px solid #D1D5DB;
+  width: 40rem;
+  top: 1.2rem;
+  z-index: -1;
+}
+
+.hr p {
+  display: inline-block;
+  z-index: 2;
+  text-align: center;
+  background-color: white;
+  margin: 0 auto;
+  padding: 0 1rem;
+}

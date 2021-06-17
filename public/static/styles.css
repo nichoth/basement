@@ -1,0 +1,29 @@
+/* .sing-in-form .form-submit-btn {
+    width: 100%;
+} */
+
+button:hover {
+    cursor: pointer;
+}
+
+.sign-in-form {
+    min-width: 20rem;
+}
+
+.sign-in-form .form-submit-btn {
+    margin-top: 1rem;
+}
+
+.sign-in-form .form-submit-btn button {
+    width: 100%;
+    background-color: black;
+    color: white;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+
+.sign-in-form .form-submit-btn button:hover {
+    /* what bgc for hover? is it in figma? */
+    background-color: gray;
+}
