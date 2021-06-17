@@ -30,7 +30,7 @@ export default function Home() {
       setTimeout(() => {
         console.log('done loggin in')
         setLoginState({
-          resolving: false,
+          isResolving: false,
           loggedInWith: type
         })
       }, 2000)
