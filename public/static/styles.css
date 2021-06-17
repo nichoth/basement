@@ -1,6 +1,12 @@
-/* .sing-in-form .form-submit-btn {
-    width: 100%;
-} */
+body {
+    background-color: black;
+    margin: 0;
+}
+
+#__next > div {
+    display: flex;
+    justify-content: space-between;
+}
 
 button:hover {
     cursor: pointer;
@@ -26,4 +32,12 @@ button:hover {
 .sign-in-form .form-submit-btn button:hover {
     /* what bgc for hover? is it in figma? */
     background-color: gray;
+}
+
+div.image {
+    width: 50%;
+}
+
+.image img {
+    width: 100%;
 }

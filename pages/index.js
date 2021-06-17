@@ -10,7 +10,7 @@ export default function Home() {
     ev.preventDefault()
   }
 
-  return (
+  return (<div>
     <div className="container">
       <Head>
         <title>Sign up to BaseGit</title>
@@ -19,6 +19,9 @@ export default function Home() {
       </Head>
 
       <main>
+        <div>
+          <img src="/mark.svg" />
+        </div>
         <h1 className="title">
             Sign up to BaseGit
         </h1>
@@ -58,7 +61,7 @@ export default function Home() {
 
       </main>
 
-      <footer>
+      {/* <footer>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
@@ -67,16 +70,16 @@ export default function Home() {
           Powered by{' '}
           <img src="/vercel.svg" alt="Vercel" className="logo" />
         </a>
-      </footer>
+      </footer> */}
 
       <style jsx>{`
         .container {
+          background-color: white;
           min-height: 100vh;
           padding: 0 0.5rem;
           display: flex;
           flex-direction: column;
-          justify-content: center;
-          align-items: center;
+          width: 50%;
         }
 
         main {
@@ -84,8 +87,6 @@ export default function Home() {
           flex: 1;
           display: flex;
           flex-direction: column;
-          justify-content: center;
-          align-items: center;
         }
 
         footer {
@@ -127,11 +128,6 @@ export default function Home() {
           margin: 0;
           line-height: 1.15;
           font-size: 4rem;
-        }
-
-        .title,
-        .description {
-          text-align: center;
         }
 
         .description {
@@ -215,5 +211,11 @@ export default function Home() {
         }
       `}</style>
     </div>
-  )
+
+    <div className="image">
+      <img src="/rocket.png" />
+    </div>
+
+
+  </div>)
 }
