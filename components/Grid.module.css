@@ -3,5 +3,5 @@
     flex-wrap: wrap;
     max-width: 800px;
     min-width: 20rem;
-    justify-content: space-around;
+    justify-content: space-between;
 }
