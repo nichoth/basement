@@ -12,11 +12,20 @@ export default function Home() {
     loggedInWith: null
   });
 
-  function submit (ev) {
+  function emailLogin (ev) {
     ev.preventDefault()
     console.log('login with email and pw')
     console.log('email', ev.target.elements.email.value)
     console.log('password', ev.target.elements.password.value)
+
+    setLoginState({ ...loginState, isResolving: true })
+
+    setTimeout(() => {
+      setLoginState({
+        isResolving: false,
+        loggedInWith: 'email'
+      })
+    }, 2000)
   }
 
   function loginProvider (type) {
@@ -28,7 +37,7 @@ export default function Home() {
 
       // wait 2 seconds
       setTimeout(() => {
-        console.log('done loggin in')
+        console.log('done logging in')
         setLoginState({
           isResolving: false,
           loggedInWith: type
@@ -61,6 +70,13 @@ export default function Home() {
             BaseGit is the best way to store information.
         </p>
 
+        {loginState.loggedInWith ?
+          <p className="logged-in-with">
+            Logged in with {loginState.loggedInWith}
+          </p> :
+          null
+        }
+
         <h2 className="provider">Continue with a provider</h2>
 
         <Grid>
@@ -90,12 +106,17 @@ export default function Home() {
           Or with your work email
         </TextHr>
 
-        <form className="sign-in-form" onSubmit={submit}>
+        <form className="sign-in-form" onSubmit={emailLogin}>
           <Field type="email" name="email" placeholder="name@domain.com"
             maxlength="64" label="Email address" />
 
           <Field name="password" placeholder="password" type="password"
-            label="Password" />
+            label="Password"
+            title="At least on number, one lowercase and one uppercase letter, and > 6 characters"
+            // at least one number, one lowercase and one uppercase letter
+            // at least six characters
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+          />
 
           <div className="form-submit-btn">
             <button type="submit" disabled={loginState.isResolving}>

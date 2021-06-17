@@ -14,3 +14,10 @@ https://www.notion.so/Front-End-Dev-Challenge-feb43cb413e644e683ce7bf84cff7c16
 
 * how to use sass for css?
 
+---------------------------------------------------
+
+## choices
+
+* form validation is done with html5 `pattern` attribute and default invalid helper text -- the simplest possible solution for showing error messages
+
+There is only 1 screen in this demo. I assume in real life you would want to show a different page if the user is logged in. Instead, i just added some green text if the user is logged in.
